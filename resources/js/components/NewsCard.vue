@@ -1,5 +1,4 @@
 <template>
-    <div>
         <div class="card newsCard">
             <img class="imgNews" :src="image">
             <div class="card-body insideNews">
@@ -12,8 +11,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
 </template>
 
 
@@ -95,6 +92,8 @@
 
     .imgNews{
         width: 100%;
+        max-height: 300px;
+        objectif-fit: cover;
     }
 
     .insideNews{
@@ -102,5 +101,18 @@
         flex-direction: column;
         justify-content: space-between;
 
+    }
+
+    @media screen and (max-width: 700px) {
+        .newsCard{
+            height: auto;
+            margin: 0;
+            width: 100%;
+        }
+
+        .card{
+            border-radius: 0px !important;
+            border: none;
+        }
     }
 </style>

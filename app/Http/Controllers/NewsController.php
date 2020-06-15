@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\news;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-
+use Validator;
 class NewsController extends Controller
 {
     /**
@@ -27,6 +27,12 @@ class NewsController extends Controller
 
     }
 
+
+    public function indexAdmin()
+    {
+        return response()->json(news::all());
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -46,6 +52,40 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validation = Validator::make($request->all(), [
+            'image' => ['required', 'file', 'file'],
+            'contentNews' => ['required', 'string'],
+            'description' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:255'],
+            'author' => ['required', 'string', 'max:255'],
+
+        ]);
+
+
+        if ($validation->fails()) {
+
+            $message = $validation->messages()->toArray();
+            return response()
+                ->json(['error' => $message ], 422 );
+        }
+
+        $image = time().'.'.request()->image->getClientOriginalExtension();
+
+        news::create([
+            'title' => $request->title,
+            'content' => $request->contentNews,
+            'description' => $request->description,
+            'author' => $request->author,
+            'image' => $image,
+
+        ]);
+
+        request()->image->move(public_path('../storage/app/public/images'), $image);
+
+        return response()
+            ->json(['success' => true ]);
+
     }
 
     /**
@@ -78,9 +118,58 @@ class NewsController extends Controller
      * @param  \App\news  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, news $news)
+    public function update(Request $request, $id)
     {
         //
+        $news = news::find($id);
+
+        if(!$news){
+            return response()
+                ->json(["error" => "Cet identifiant est inconnu"], 404);
+        }
+
+        $validation = Validator::make($request->all(), [
+            'image' => ['required'],
+            'contentNews' => ['required', 'string'],
+            'description' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:255'],
+            'author' => ['required', 'string', 'max:255'],
+        ]);
+
+
+        if ($validation->fails()) {
+
+            $message = $validation->messages()->toArray();
+            return response()
+                ->json(['error' => $message ], 422 );
+        }
+
+
+        if($request->image !== $news->image){
+
+
+            $image = time().'.'.request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('../storage/app/public/images'), $image);
+            unlink('../storage/app/public/images/'.$news->image);
+
+        }
+
+
+       // $request->image = $image;
+
+        $news->update([
+                'title' => $request->title,
+                'content' => $request->contentNews,
+                'description' => $request->description,
+                'author' => $request->author,
+                'image' => $image ?? $request->image,
+                'publish_at' => $request->publish_at,
+                'active' => $request->isActive
+        ]
+        );
+
+        return response()
+            ->json(['error' => Null, 'news' => $news]);
     }
 
     /**
@@ -89,8 +178,22 @@ class NewsController extends Controller
      * @param  \App\news  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(news $news)
+    public function destroy(news $news, $id)
     {
         //
+
+        $news = news::find($id);
+
+        if(!$news){
+            return response()
+                ->json(["error" => "Cet identifiant est inconnu"], 404);
+        }
+
+        unlink('../storage/app/public/images/'.$news->image);
+
+        $news->delete();
+
+        return response()
+            ->json(["error" => Null ]);
     }
 }

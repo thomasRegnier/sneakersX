@@ -1,29 +1,13 @@
 <template>
     <div>
+        <!--<GoBack/>-->
+        <div class="container" style="border-bottom: 1px dotted black">
+            <h1 style="padding-top: 50px" class="text-center">All news</h1>
+        </div>
+
         <div class="newsContainer">
             <NewsCard v-for="(newOne, index) in news" :key="index" :news="newOne" />
         </div>
-        <!--<div class="album py-5 bh-light">-->
-            <!--<div class="container">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-md-4" v-for="(newOne, index) in news" :key="index">-->
-                        <!--<div class="card  box-shadow">-->
-                            <!--<img class="card-img-top" style="height: 225px; width: 100%; display: block; object-fit: cover" :src="imagePath(newOne.image)"/>-->
-                        <!--<div class="card-body">-->
-                            <!--<p class="card-text">-->
-                                <!--{{ newOne.title }}-->
-                            <!--</p>-->
-                            <!--<div class="d-flex justify-content-between align-items-center">-->
-                                <!--<button @click="goNews(news.id)" class="moreActu">Lire l'article</button>-->
-                                <!--<article>{{moment(newOne.publish_at).format("LL")}}</article>-->
-                            <!--</div>-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
     </div>
 </template>
 
@@ -33,7 +17,8 @@
         flex-wrap: wrap;
         justify-content: center;
         margin: auto;
-        width: 90vw;
+        width: 95vw;
+        padding-top: 30px;
 
     }
 
@@ -52,6 +37,13 @@
         transition: ease 0.3s;
 
     }
+
+    @media screen and (max-width: 700px) {
+        .newsContainer {
+            width: 100vw;
+            padding-top: 10px;
+        }
+    }
 </style>
 
 <script>
@@ -59,10 +51,12 @@
     import { mapGetters } from "vuex";
 
     import NewsCard from '../components/NewsCard.vue'
+    import GoBack from '../components/GoBack.vue'
 
     export default {
         components: {
-            NewsCard
+            NewsCard,
+            GoBack
         },
 
         computed: {

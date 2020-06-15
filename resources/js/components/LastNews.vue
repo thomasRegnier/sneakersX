@@ -1,6 +1,10 @@
 <template>
-    <div>
-        <h1 style="padding-left: 10px">Last news</h1>
+    <div style="padding-top: 50px">
+        <div class="container" style="border-bottom: 1px dotted black; margin-bottom: 50px" >
+            <div style="padding: 10px">
+                <h1 class="text-center">Last news</h1>
+            </div>
+        </div>
         <div class="forLastNews">
             <div class="insideLastNews" v-for="(news, index) in lastNews" :key="index"
                  :style="{ backgroundImage: 'url(' + imagePath(news.image) + ')' , }"
@@ -17,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div style="font-size: 180%; color: grey" class="text-center pt-2"><i class="fas fa-arrows-alt-h"></i></div>
+        <!--<div style="font-size: 180%; color: grey" class="text-center pt-2"><i class="fas fa-arrows-alt-h"></i></div>-->
     </div>
 
 </template>
@@ -74,6 +78,34 @@
     scroll-snap-type: x mandatory;
 }
 
+
+/* total width */
+.forLastNews::-webkit-scrollbar {
+    background-color:#fff;
+    width:16px
+}
+
+/* background of the scrollbar except button or resizer */
+.forLastNews::-webkit-scrollbar-track {
+    background-color:#fff
+}
+.forLastNews::-webkit-scrollbar-track:hover {
+    background-color:#f4f4f4
+}
+
+/* scrollbar itself */
+.forLastNews::-webkit-scrollbar-thumb {
+    background-color:#babac0;
+    border-radius:16px;
+    border:5px solid #fff
+}
+.forLastNews::-webkit-scrollbar-thumb:hover {
+    background-color:#a0a0a5;
+    border:4px solid #f4f4f4
+}
+
+/* set button(top and bottom of the scrollbar) */
+.forLastNews::-webkit-scrollbar-button {display:none}
 
     .insideLastNews{
         scroll-snap-align: center;
@@ -138,4 +170,18 @@
     .maskNews:hover .buttonInsideNews{
         opacity: 1;
     }
+
+@media screen and (max-width: 700px) {
+
+    .maskNews, .insideLastNews{
+        width: 100vw !important;
+        min-width: 100vw;
+        max-width: 100vw;
+
+    }
+
+    .buttonInsideNews{
+        opacity: 1;
+    }
+}
 </style>

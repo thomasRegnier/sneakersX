@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Jordan",
+    "description" : "Créée en 1997, la marque Jordan doit tout à celui dont elle porte le nom : Michael Jordan. Véritable prodige du basket, le joueur est devenu le porte-étendard de cette marque. C'est lui que tu retrouves symbolisé par le logo jumpman présent sur tous les vêtements, chaussures et accessoires. Après avoir séduit les sportifs, la marque a conquis tous les fans de sportswear et les amateurs d'une mode stylée et branchée.",
+    "logo": "logo_jor.png",
+    "banner" : "jordan_header.jpg"
+  },
+  {
+    "name": "Nike",
+    "description" : "Nike inspire les athlètes du monde entier avec des produits, des expériences et des services innovants.",
+    "logo": "nike_logo.jpg",
+    "banner" : "nike_header.png"
+  },
+  {
+    "name": "New Balance",
+    "description" : "Entraînez-vous en toute confiance avec les chaussures de course et vêtements signés New Balance.",
+    "logo": "newbalance_logo.jpg",
+    "banner" : "newbalance_header.jpg"
+  },
+  {
+    "name": "Adidas",
+    "description" : "Adidas est une firme allemande fondée en 1949 par Adolf Dassler, spécialisée dans la fabrication d'articles de sport, basée à Herzogenaurach en Allemagne. Elle est mondialement connue sous l'appellation « la marque aux trois bandes », en raison des trois bandes parallèles qui constituent son logo.",
+    "logo": "adidas_logo.jpg",
+    "banner" : "adidas_header.jpg"
+  }
+]
