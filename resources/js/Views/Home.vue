@@ -15,7 +15,7 @@
                 <!--</div>-->
             </div>
             <div class="homeRight">
-                <img src="storage/images/home.jpeg"/>
+                <img src="/public/images/home.jpeg"/>
             </div>
         </div>
         <!--<LastNews />-->
