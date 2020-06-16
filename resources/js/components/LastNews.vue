@@ -16,7 +16,7 @@
                         <article class="lastNewsTitle">
                             {{ news.title }}
                         </article>
-                        <button class="buttonInsideNews">Read article</button>
+                        <button @click="goNews(news.id)" class="buttonInsideNews">Read article</button>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,6 @@
                     axios.get('/api/news?max=5')
                         .then(res => {
                             {
-                                console.log(res.data)
                                 this.lastNews = res.data
                             }
                         }).catch(err => {

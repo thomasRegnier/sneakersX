@@ -35,6 +35,8 @@ import AdminActu from './Views/AdminActu.vue'
 import ActuForm from './Views/ActuForm.vue'
 import AdminBrand from './Views/AdminBrand.vue'
 import BrandForm from './views/BrandForm.vue'
+import AdminProducts from "./Views/AdminProducts"
+import ProductForm from "./Views/ProductForm"
 
 //store.dispatch("GET_NEWS");
 store.dispatch("INIT_CART")
@@ -216,7 +218,7 @@ const isAdmin = (to, from, next) => {
             component: ActuForm,
             beforeEnter: isAdmin,
             meta: {
-                title: "Admin Actu"
+                title: "Ajouter une actu"
             }
         },
         {
@@ -225,7 +227,7 @@ const isAdmin = (to, from, next) => {
             component: ActuForm,
             beforeEnter: isAdmin,
             meta: {
-                title: "Admin Actu"
+                title: "Modifier une actu"
             }
         },
         {
@@ -243,7 +245,7 @@ const isAdmin = (to, from, next) => {
             component: BrandForm,
             beforeEnter: isAdmin,
             meta: {
-                title: "Admin Marques"
+                title: "Ajouter une marque"
             }
         },
         {
@@ -252,7 +254,34 @@ const isAdmin = (to, from, next) => {
             component: BrandForm,
             beforeEnter: isAdmin,
             meta: {
-                title: "Admin Marques"
+                title: "Modifier une marque"
+            }
+        },
+        {
+            path: '/AdminProducts',
+            name: 'AdminProducts',
+            component: AdminProducts,
+            beforeEnter: isAdmin,
+            meta: {
+                title: "Admin Produits"
+            }
+        },
+        {
+            path: '/ProductForm',
+            name: 'ProductForm',
+            component: ProductForm,
+            beforeEnter: isAdmin,
+            meta: {
+                title: "Ajouter un produit"
+            }
+        },
+        {
+            path: '/ProductForm/:id',
+            name: 'ProductForm',
+            component: ProductForm,
+            beforeEnter: isAdmin,
+            meta: {
+                title: "Modifier un produit"
             }
         },
         {

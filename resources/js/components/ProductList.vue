@@ -13,7 +13,12 @@
             <!--</span>-->
         <!--</div>-->
         <div class="forProducts">
-            <div @click="goProduct(product.id)" class="prodCard" v-for="(product, index) in listProduct" :key="index">
+            <div @click="goProduct(product.id)" class="prodCard" v-for="(product, index) in listProduct" :key="index" style="position: relative">
+
+                <div class="overLay">
+                    <i style="font-size: 25px; color: white" class="fas fa-search"></i>
+                </div>
+
                 <img class="imageProd" :src="imagePath(product.image)">
                 <div class="insideProduct">
                     <article class="nameProd">{{ product.name }}</article>
@@ -79,6 +84,24 @@
 
 <style scoped>
 
+    .overLay{
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        background: linear-gradient(153deg, rgba(0,0,0,0.10828081232492992) 100%, rgba(0,0,0,1) 100%);
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: ease 0.2s;
+        padding: 30px;
+        border-radius: 3px;
+    }
+
+    .overLay:hover{
+        opacity: 1;
+
+    }
 
     .forBrandLogo{
         width: 50px;
@@ -200,11 +223,6 @@
             title: '',
             logo: ''
         },
-
-        mounted(){
-            console.log(this.brand)
-        },
-
 
         computed: {
 

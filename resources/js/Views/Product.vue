@@ -9,17 +9,26 @@
             <!--</div>-->
             <div class="middleProduct">
                 <!--<img :src="imagePath(product.image)"/>-->
-                <Carrousel :images="product.images"/>
+                <template v-if="product.images.length > 0">
+                    <Carrousel :images="product.images"/>
+                </template>
+                <template v-else>
+                    <img width="100%" :src="'/storage/images/'+product.image" >
+                </template>
             </div>
             <div class="rightProduct">
                 <!--<article class="productBrand">{{ product.brand.name }}</article>-->
-                <article style="font-size: 150%">{{ product.brand.name }}</article>
+                <div class="d-flex align-items-center justify-content-between">
+                    <article style="font-size: 150%">{{ product.brand.name }}</article>
+                    <img style="width: 50px" :src="'/storage/images/'+product.brand.logo">
+                </div>
+
 
                 <article class="productRef">{{ product.name }}</article>
                 <div style="font-size: 150%; padding-top: 10px; color: black">
                     {{ product.price }} €
                 </div>
-                <article class="productDescription"> {{ product.description }}</article>
+                <article v-html="product.description" class="productDescription"> {{ product.description }}</article>
                 <div style="width: 50%" class="d-flex justify-content-between align-items-center">
                     <article><b>Size</b></article>
                     <!--<select style="width: 30%">-->

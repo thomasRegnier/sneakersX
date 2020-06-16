@@ -25,11 +25,21 @@
                             <img v-if="column === 'image'" :src="imagePath(data['image'])">
                             <img class="logobrand" v-else-if="column === 'logo'" :src="imagePath(data['logo'])">
                             <img v-else-if="column === 'banner'" :src="imagePath(data['banner'])">
+                            <span v-else-if="column === 'brand'">
+                                {{ data['brand'].name }}
+                                <img style="width: 50px" :src="'storage/images/'+data['brand'].logo">
+                            </span>
                             <span v-else-if="column === 'active'">
                                 {{ (data['active']) === 1 ? "Oui" : "Non" }}
                             </span>
                             <span v-else-if="column === 'publish_at'">
                                 {{moment(data['publish_at']).format("LL")}}
+                            </span>
+                            <span v-else-if="column === 'images'">
+                                <img style="width: 20px" v-for="(img , index) in data['images']" :src="imagePath(img.name)"/>
+                            </span>
+                            <span v-html="data['description']" v-else-if="column === 'description'">
+                                {{data['description']}}
                             </span>
                            <span v-else>{{data[column]}}</span>
                         </td>

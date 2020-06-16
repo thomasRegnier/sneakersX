@@ -1,8 +1,8 @@
 <template>
     <div>
-        <TableAdmin title="Actualités"
+        <TableAdmin title="Produits"
                     :fields="fields"
-                    :datas="news"
+                    :datas="brands"
                     :columns="column"
                     @addItems="addActu"
                     @editItems="editActu"
@@ -13,6 +13,7 @@
 
 <script>
 
+
     import axios from 'axios'
 
     import TableAdmin from "../components/TableAdmin";
@@ -21,25 +22,25 @@
         components: {TableAdmin},
         data(){
             return{
-                news: '',
-                fields: ["id", "titre", "image", "description", "publié", "actif"],
-                column : ["id", "title", "image", "description" ,"publish_at", "active" ]
+                brands: '',
+                fields: ["id","image", "images", "name", "brand", "description", "price", "active"],
+                column : ["id","image", "images", "name","brand", "description" ,"price", "active" ]
             }
         },
 
         beforeMount(){
-            this.getNews()
+            this.getPrd()
         },
         methods: {
             imagePath(elem){
                 return 'storage/images/'+elem
             },
 
-            getNews(){
-                axios.get('/api/admin/news')
+            getPrd(){
+                axios.get('/api/admin/products')
                     .then(res => {
                         {
-                            this.news = res.data
+                            this.brands = res.data
                         }
                     }).catch(err => {
                     console.log(err)
@@ -47,19 +48,18 @@
             },
 
             addActu(){
-                this.$router.push({path: '/ActuForm'})
+                this.$router.push({path: '/ProductForm'})
             },
 
             editActu(param){
-                this.$router.push({path: `/ActuForm/${param}`})
-
+                this.$router.push({path: `/ProductForm/${param}`})
             },
 
             deleteActu(elem){
-                axios.delete(`/api/admin/news/${elem}`)
+                axios.delete(`/api/admin/product/${elem}`)
                     .then(res => {
                         {
-                            this.news.splice(this.news.findIndex(note =>  note.id === elem), 1)
+                            this.brands.splice(this.brands.findIndex(note =>  note.id === elem), 1)
 
                         }
                     }).catch(err => {

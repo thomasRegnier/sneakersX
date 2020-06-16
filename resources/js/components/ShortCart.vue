@@ -151,10 +151,6 @@
             ...mapGetters(["cart", "cartCount", "totalCart"])
         },
 
-        mounted(){
-            console.log(this.cart)
-        },
-
         methods: {
 
             ...mapActions(['TRASH_IN_CART', 'ADD_TO_CART',  'UPDATE_QUANTITY_PLUS','UPDATE_QUANTITY_LESS']),
@@ -164,20 +160,17 @@
             },
 
             plusQty(elem){
-                console.log(elem)
                 this.UPDATE_QUANTITY_PLUS(elem)
                 this.ADD_TO_CART(this.cart)
 
             },
 
             lessQty(elem){
-                console.log(elem)
                 this.UPDATE_QUANTITY_LESS(elem)
                 this.ADD_TO_CART(this.cart)
             },
 
             trashInCart(elem){
-                console.log(elem)
                 this.TRASH_IN_CART(elem)
                 this.ADD_TO_CART(this.cart)
             },

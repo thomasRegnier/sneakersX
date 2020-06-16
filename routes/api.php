@@ -42,6 +42,27 @@ Route::post('/admin/news', 'NewsController@store');
 Route::post('/admin/news/{id}', 'NewsController@update');
 
 Route::get('/admin/brands', 'BrandController@index');
+Route::post('/admin/brands', 'BrandController@store');
+Route::delete('/admin/brands/{id}', 'BrandController@destroy');
+Route::get('/admin/brands/{id}', 'BrandController@adminShow');
+Route::post('/admin/brand/{id}', 'BrandController@update');
+Route::get('/admin/products', 'ProductController@adminIndex');
+Route::post('/admin/product', 'ProductController@store');
+Route::get('/admin/product/{id}', 'ProductController@show');
+Route::post('/admin/product/{id}', 'ProductController@update');
+Route::delete('/admin/images/{id}', 'ImageController@destroy');
+Route::post('/admin/images', 'ImageController@store');
+Route::delete('/admin/product/{id}', 'ProductController@destroy');
+
+
+
+
+
+
+
+
+
+
 
 
 

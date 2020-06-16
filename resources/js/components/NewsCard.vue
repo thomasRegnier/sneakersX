@@ -1,14 +1,19 @@
 <template>
         <div class="card newsCard">
-            <img class="imgNews" :src="image">
+            <div>
+                <img class="imgNews" :src="image">
+            </div>
             <div class="card-body insideNews">
                 <article class="newsTitle">{{news.title}}</article>
                 <article class="newsDesc">{{news.desc}}</article>
                 <div class="forButt">
                     <article>{{moment(news.publish_at).format("LL")}}</article>
 
-                    <button @click="goNews(news.id)" class="moreActu">Lire l'article</button>
+                    <!--<button @click="goNews(news.id)" class="moreActu">Lire l'article</button>-->
                 </div>
+            </div>
+            <div class="overLay">
+                <button @click="goNews(news.id)" class="moreActu">Lire l'article</button>
             </div>
         </div>
 </template>
@@ -46,6 +51,7 @@
 
 
 <style scoped>
+
     .newsTitle{
         font-size: 150%;
         font-weight: bold;
@@ -64,10 +70,10 @@
     }
 
     .newsCard{
-        width: 400px;
-        height: 500px;
+        width: 300px;
         overflow: hidden;
         margin: 20px;
+        position: relative;
     }
     .moreActu{
         background-color: #000;
@@ -85,14 +91,9 @@
 
     }
 
-    .moreActu:hover{
-        transform: scale(1.04);
-        box-shadow: 0px 0px 10px lightgrey;
-    }
-
     .imgNews{
         width: 100%;
-        max-height: 300px;
+        height: 200px;
         objectif-fit: cover;
     }
 
@@ -103,11 +104,33 @@
 
     }
 
+    .overLay{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(153deg, rgba(0,0,0,0.36878501400560226) 100%, rgba(0,0,0,1) 100%);
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: ease 0.2s;
+    }
+
+    .overLay:hover{
+        opacity: 1;
+
+    }
+
     @media screen and (max-width: 700px) {
         .newsCard{
             height: auto;
             margin: 0;
             width: 100%;
+        }
+
+        .imgNews {
+            width: 100%;
+            height: auto;
         }
 
         .card{

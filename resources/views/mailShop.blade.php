@@ -257,14 +257,15 @@
                     <tbody>
                     <tr>
                         <td class="padded">
-                            <h1>Message de contact</h1>
+                            <h1>Commande effectué</h1>
                             <p>
-                                <span style="margin-right: 5px">{{  $info['name'] }}</span>
 
-                                <span>{{ $info['firstname'] }}</span>
-                            <article>{{ $info['email'] }}</article>
+                                <span>{{ $info['userInfo'] }}</span>
+                                <article>{{ $info['userEmail'] }}</article>
+                                <article>{{ $info['userAddress'] }}</article>
+
                             </p>
-                            <p>{{ $info['message'] }}</p>
+                            <p>Total : {{ $info['total'] }}€</p>
 
                             <p class="caption">©Sneakers-x</p>
                         </td>

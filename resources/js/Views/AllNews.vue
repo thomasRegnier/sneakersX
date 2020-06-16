@@ -5,7 +5,9 @@
             <h1 style="padding-top: 50px" class="text-center">All news</h1>
         </div>
 
+
         <div class="newsContainer">
+            <!--<Skeleton v-for="number in 16" width="300"/>-->
             <NewsCard v-for="(newOne, index) in news" :key="index" :news="newOne" />
         </div>
     </div>
@@ -19,6 +21,8 @@
         margin: auto;
         width: 95vw;
         padding-top: 30px;
+        padding-bottom: 80px;
+
 
     }
 
@@ -52,11 +56,13 @@
 
     import NewsCard from '../components/NewsCard.vue'
     import GoBack from '../components/GoBack.vue'
+    import Skeleton from '../components/Skeleton'
 
     export default {
         components: {
             NewsCard,
-            GoBack
+            GoBack,
+            Skeleton
         },
 
         computed: {

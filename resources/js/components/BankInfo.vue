@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 600px">
+    <div class="mainCred">
 
 
         <CreditCard
@@ -208,11 +208,9 @@
             trySubmit(){
                 this.$v.$touch()
                 if (this.$v.$invalid) {
-                    console.log("error")
                     //   this.$snotify.error("Something wrong !");
 
                 } else {
-                    console.log("ok")
                     this.$emit('paymentOk')
                    // this.readyPayment = true
                 }
@@ -221,3 +219,16 @@
 
     }
 </script>
+
+<style>
+    .mainCred{
+        width: 600px;
+    }
+
+    @media screen and (max-width: 800px) {
+        .mainCred{
+            width: auto;
+        }
+    }
+
+</style>

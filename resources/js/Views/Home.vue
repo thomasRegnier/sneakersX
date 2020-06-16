@@ -1,20 +1,24 @@
 <template>
     <div>
+        <!--<div>-->
+            <!--<HomeCarrousel/>-->
+        <!--</div>-->
         <div class="forHome">
             <div class="homeLeft">
-                <div class="toLogo">Sneakers-x</div>
-                <div style="padding-top: 10px">
-                    <router-link :to="{ path: '/Catalogue' }">
-                        <button class="btnShow">Catalogue</button>
-                    </router-link>
+                <HomeCarrousel/>
+                <!--<div class="toLogo">Sneakers-x</div>-->
+                <!--<div style="padding-top: 10px">-->
+                    <!--<router-link :to="{ path: '/Catalogue' }">-->
+                        <!--<button class="btnShow">Catalogue</button>-->
+                    <!--</router-link>-->
 
-                </div>
+                <!--</div>-->
             </div>
             <div class="homeRight">
                 <img src="storage/images/home.jpeg"/>
             </div>
         </div>
-        <LastNews />
+        <!--<LastNews />-->
         <ProductList :listProduct="products.data" :withPaginate="false" title="Trends" :logo="null"/>
     </div>
 </template>
@@ -54,6 +58,7 @@
 
     .forHome{
         width: 100vw;
+        height: 60vh;
         display: flex;
     }
 
@@ -73,7 +78,8 @@
 
 
     .homeRight img{
-        width: 100%
+        width: 100%;
+        height: 60vh;
     }
     body{
         background-color: white !important;
@@ -109,6 +115,7 @@
     import LastNews from '../components/LastNews.vue'
     import axios from 'axios'
     import ProductList from '../components/ProductList.vue'
+    import HomeCarrousel from '../components/HomeCarrousel'
 
     import { mapGetters, mapActions } from "vuex";
 
@@ -116,7 +123,8 @@
 
         components: {
             LastNews,
-            ProductList
+            ProductList,
+            HomeCarrousel
         },
 
         data(){

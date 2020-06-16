@@ -195,18 +195,15 @@
             trySubmit(){
                 this.$v.$touch()
                 if (this.$v.$invalid) {
-                    console.log("error")
                     //   this.$snotify.error("Something wrong !");
 
                 } else {
-                    console.log("ok")
                     this.register()
                 }
 
             },
             register(){
                 this.REGISTER_USER(this.user).then(response => {
-                    console.log(response)
                     this.$snotify.success("Welcome " + " " + response.data.user.name);
                     this.$router.push({name:'Home'})
 

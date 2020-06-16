@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="">
+        <div class="" v-if="">
             <div class="" id="slider">
                 <div id="myCarousel" class="carousel slide">
                     <!-- main slider carousel items -->

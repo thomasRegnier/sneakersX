@@ -4,7 +4,7 @@
             <router-link :to="{ path: '/' }">
             <span
                     class="logo"
-                    style="color: white"
+                    style="color: black"
             >
                 Sneakers-X
             </span>
@@ -21,11 +21,14 @@
                 <router-link :to="{ path: '/AdminBrand' }">
                     Marques
                 </router-link>
+                <router-link :to="{ path: '/AdminProducts' }">
+                    Produits
+                </router-link>
             </div>
 
             <div class="d-flex align-items-center">
                 <div class="form-inline d-flex justify-content-center">
-                    <i style="cursor: pointer ;  color: white !important;" @click="goSearch" class="fas fa-search" aria-hidden="true"></i>
+                    <i style="cursor: pointer ;" @click="goSearch" class="fas fa-search" aria-hidden="true"></i>
                     <input class="form-control form-control-sm ml-2 w-75" type="text" placeholder="Search"
                            aria-label="Search"
                            v-model="searchQuery"
@@ -49,7 +52,7 @@
                           @mouseover="mouseOver"
                           @mouseleave="mouseLeave"
                 >
-                    <i @click="goToCart" style="color: white" class="fas fa-shopping-cart"></i>
+                    <i @click="goToCart" style="color: black" class="fas fa-shopping-cart"></i>
                     <span v-if="cartCount > 0" class="circleCount">{{ cartCount }}</span>
                     <div v-if="!hideCart" class="forShortCart">
                         <ShortCart />
@@ -154,7 +157,7 @@
     .nameUser{
         font-weight: bold;
         font-family: 'Marck Script', cursive;
-        color: white;
+        color: black;
         font-size: 140%;
     }
 
@@ -169,8 +172,8 @@
     .toLogout button{
         padding: 5px 10px;
         border-radius: 6px;
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
         margin-left: 10px;
         box-shadow: none;
         border: none;
@@ -243,10 +246,10 @@
         position: absolute;
         top: -5px;
         left: 16px;
-        background: white;
+        background: black;
         border-radius: 100%;
         font-size: 10px;
-        color: black;
+        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -255,11 +258,12 @@
     .myNav{
         width: 100%;
         display: flex;
-        background-color: black;
+        background-color: white;
         padding: 20px;
         /*margin-bottom: 50px;*/
         align-items: center;
         justify-content: space-between;
+        box-shadow: 0px 0px 3px lightgrey;
     }
     .logo{
         font-family: 'Marck Script', cursive;
@@ -273,11 +277,11 @@
         font-size: 110%;
     }
     a:hover{
-        color: white;
+        color: black;
         text-decoration: none;
     }
     .router-link-exact-active {
-        color: white;
+        color: black;
     }
 
 
@@ -286,6 +290,7 @@
         cursor: pointer;
         font-size: 120%;
         position: relative;
+        color: black;
 
     }
 
@@ -379,12 +384,10 @@
 
            logout(){
                this.LOGOUT_USER().then(response => {
-                   console.log(response)
                    this.$snotify.simple("Bye !" );
                })
            },
            goSearch(){
-                console.log(this.searchQuery)
 
                if (this.searchQuery.trim().length > 0) {
                    this.SET_SEARCH(this.searchQuery)

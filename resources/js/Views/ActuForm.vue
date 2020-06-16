@@ -213,7 +213,8 @@
                     author: '',
                     image: '',
                     publish_at: '',
-                    active : ''
+                    active : '',
+                    price: '',
                 },
 
                 imageUp: '',
@@ -303,7 +304,6 @@
                 data.append('isActive', this.news.active)
 
                 axios.post('/api/admin/news', data).then(response => {
-                    console.log(response)
                     this.$router.push('/AdminActu')
 
                 }).catch( (error) => {
@@ -321,7 +321,6 @@
             updateNews(){
 
                 this.news.active = this.news.active === false ? 0 : 1
-                console.log(this.news.active)
                 const data = new FormData();
                 data.append('description', this.news.description);
                 data.append('contentNews', this.news.content)
@@ -332,7 +331,6 @@
                 data.append('isActive', this.news.active)
 
                 axios.post(`/api/admin/news/${this.$route.params.id}`, data).then(response => {
-                    console.log(response)
                     this.$router.push('/AdminActu')
 
                 }).catch( (error) => {
@@ -375,7 +373,6 @@
                 axios.get(`/api/news/${id}`)
                     .then(res => {
                         {
-                            console.log(res.data)
                             this.news = {...res.data}
                             this.news.publish_at = moment(res.data.publish_at).format("YYYY-MM-DD")
                             this.news.active = res.data.active === 1 ? true : false

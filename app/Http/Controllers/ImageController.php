@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Image;
 use Illuminate\Http\Request;
-
+use Validator;
 class ImageController extends Controller
 {
     /**
@@ -36,6 +36,30 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //
+        $validation = Validator::make($request->all(), [
+            'image' => ['required', 'file', 'file'],
+            'product_id' => ['required', 'integer']
+
+        ]);
+
+
+        if ($validation->fails()) {
+
+            $message = $validation->messages()->toArray();
+            return response()
+                ->json(['error' => $message ], 422 );
+        }
+
+        $image = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('../storage/app/public/images'), $image);
+
+       $newImage = Image::create([
+            'name' => $image,
+            'product_id' => $request->product_id,
+        ]);
+
+        return response()
+            ->json(['success' => true, 'image' => $newImage ]);
     }
 
     /**
@@ -78,8 +102,22 @@ class ImageController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy(Image $image, $id)
     {
         //
+
+        $image = Image::find($id);
+
+        if(!$image){
+            return response()
+                ->json(["error" => "Cet identifiant est inconnu"], 404);
+        }
+
+        unlink('../storage/app/public/images/'.$image->name);
+
+        $image->delete();
+
+        return response()
+            ->json(["error" => Null ]);
     }
 }

@@ -6,6 +6,9 @@ use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\OrderProduct;
+use App\MailShop;
+use Illuminate\Support\Facades\Mail;
+
 
 class OrderController extends Controller
 {
@@ -88,6 +91,10 @@ class OrderController extends Controller
 
 
 
+        Mail::to("thomas.regnier3001@gmail.com")->send(new MailShop($displayOrder, $displayPrd));
+        Mail::to($request->user['email'])->send(new MailShop($displayOrder, $displayPrd));
+
+
         return response()
                 ->json(
                     [
@@ -115,6 +122,8 @@ class OrderController extends Controller
         $displayPrd = OrderProduct::where('order_id', $id)
             ->with('productsInOrder')
             ->get();
+
+
 
 
         return response()
