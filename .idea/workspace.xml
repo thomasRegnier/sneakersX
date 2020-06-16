@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7acf056-b29e-472e-9e44-ce59309e3d92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/MailShop.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Views/AdminProducts.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Views/ProductForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/HomeCarrousel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/MiniLoading.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/SecondaryImg.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Skeleton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mailShop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Brand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Brand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Store/getter.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Store/getter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/ActuForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/ActuForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/AdminActu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/AdminActu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/AdminBrand.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/AdminBrand.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/AllNews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/AllNews.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/BrandForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/BrandForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/Products.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/Products.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/BankInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/BankInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Carrousel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Carrousel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/LastNews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LastNews.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Navbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/NewsCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewsCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ProductList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ProductList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ShortCart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ShortCart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/TableAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TableAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-    </list>
+    <list default="true" id="f7acf056-b29e-472e-9e44-ce59309e3d92" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,18 +23,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="env" value="1" />
+          <entry key="env" value="2" />
           <entry key="js" value="8" />
-          <entry key="php" value="30" />
+          <entry key="php" value="32" />
           <entry key="vue" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="1" />
+          <entry key=".env file" value="2" />
           <entry key="Blade" value="2" />
           <entry key="JavaScript" value="8" />
-          <entry key="PHP" value="28" />
+          <entry key="PHP" value="30" />
           <entry key="Vue.js" value="63" />
         </counts>
       </usages-collector>
@@ -97,47 +57,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/session.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="155" column="32" lean-forward="true" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/ProductTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-              <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/UsersTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/seeds/BrandTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -202,8 +144,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/BrandTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
       </list>
     </option>
   </component>
@@ -324,7 +266,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="831" />
@@ -347,13 +289,12 @@
             <path>
               <item name="sneakers-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="sneakers-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sneakers-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="sneakers-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -434,18 +375,18 @@
       <workItem from="1592230929105" duration="590000" />
       <workItem from="1592231685882" duration="4414000" />
       <workItem from="1592288202504" duration="22440000" />
-      <workItem from="1592316063608" duration="4113000" />
+      <workItem from="1592316063608" duration="4389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26553000" />
+    <option name="totallyTimeSpent" value="26829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -460,7 +401,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28630707" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22683264" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -535,13 +476,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="283" column="44" selection-start-line="283" selection-start-column="44" selection-end-line="283" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/Views/Product.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -653,9 +587,6 @@
           <caret line="94" column="27" selection-start-line="94" selection-end-line="95" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/BankInfo.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -865,13 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/ProductTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -894,11 +818,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/BrandTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="748">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
           <folding>
             <element signature="e#7#38#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="155" column="32" lean-forward="true" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
       </provider>
     </entry>
