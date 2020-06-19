@@ -40,7 +40,7 @@
                 <router-link :to="{ path: '/Catalogue' }">Catalogue</router-link>
                 <router-link :to="{ path: '/Contact' }">Contact</router-link>
                 <div v-if="!user">
-                    <router-link :to="{ path: '/Login' }">Connexion</router-link>
+                    <router-link :to="{ path: '/Login' }">Login</router-link>
                     <router-link :to="{ path: '/Register' }">Register</router-link>
                 </div>
                 <div v-else class="toLogout">
