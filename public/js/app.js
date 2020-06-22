@@ -4301,7 +4301,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["cart", "cartCount", "totalCart"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["user"])),
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['ADD_TO_CART', 'TRASH_CART']), {
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     },
     trySubmit: function trySubmit() {
       this.$v.$touch();
@@ -9222,7 +9222,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(["cart", "cartCount", "totalCart"])),
   methods: {
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     }
   },
   mounted: function mounted() {
@@ -66650,7 +66650,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("article", [_vm._v("\n                    Total\n                ")]),
+      _c("article", [
+        _vm._v("\n                    Total :\n                ")
+      ]),
       _vm._v(" "),
       _c("article", { staticClass: "forSize" }, [
         _vm._v("\n                    Taxes comprises\n                ")
@@ -71503,7 +71505,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("article", { staticClass: "cartName col-3" }, [
               _c("span", { staticClass: "text-capitalize" }, [
-                _vm._v("QUANITÉ")
+                _vm._v("QUANTITÉ")
               ])
             ]),
             _vm._v(" "),
