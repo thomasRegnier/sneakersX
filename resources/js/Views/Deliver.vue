@@ -482,7 +482,7 @@
             ...mapActions(['ADD_TO_CART', 'TRASH_CART']),
 
             imagePath(elem){
-                return '/storage/images/'+elem
+                return elem
             },
 
             trySubmit(){

@@ -42,7 +42,7 @@
           <entry key="env" value="8" />
           <entry key="js" value="17" />
           <entry key="php" value="51" />
-          <entry key="vue" value="101" />
+          <entry key="vue" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -52,7 +52,7 @@
           <entry key="JavaScript" value="17" />
           <entry key="PHP" value="47" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Vue.js" value="101" />
+          <entry key="Vue.js" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -76,11 +76,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="314">
               <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/js/Views/AllNews.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/Views/Home.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="636">
+              <caret line="152" selection-start-line="152" selection-end-line="162" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -162,13 +180,13 @@
         <option value="$PROJECT_DIR$/resources/js/Views/AdminProducts.vue" />
         <option value="$PROJECT_DIR$/resources/js/Views/ResultSearch.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BrandController.php" />
-        <option value="$PROJECT_DIR$/resources/js/Views/AllNews.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/Navbar.vue" />
         <option value="$PROJECT_DIR$/resources/js/Views/Contact.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/ShortCart.vue" />
         <option value="$PROJECT_DIR$/resources/js/Views/Cart.vue" />
         <option value="$PROJECT_DIR$/resources/js/Views/Order.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/HomeCarrousel.vue" />
+        <option value="$PROJECT_DIR$/resources/js/Views/AllNews.vue" />
       </list>
     </option>
   </component>
@@ -438,18 +456,17 @@
       <workItem from="1592231685882" duration="4414000" />
       <workItem from="1592288202504" duration="22440000" />
       <workItem from="1592316063608" duration="14066000" />
-      <workItem from="1592816400828" duration="14963000" />
+      <workItem from="1592816400828" duration="15800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51469000" />
+    <option name="totallyTimeSpent" value="52306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -464,7 +481,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.36099586" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.36099586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -664,13 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="93" selection-start-line="39" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/Views/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="152" selection-start-line="152" selection-end-line="162" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -883,13 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/Views/AllNews.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BrandController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1897">
@@ -931,6 +934,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/Views/AllNews.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/Views/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="152" selection-start-line="152" selection-end-line="162" selection-end-column="17" />
         </state>
       </provider>
     </entry>
