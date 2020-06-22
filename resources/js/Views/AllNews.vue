@@ -2,7 +2,7 @@
     <div>
         <!--<GoBack/>-->
         <div class="container" style="border-bottom: 1px dotted black">
-            <h1 style="padding-top: 50px" class="text-center">Actualitées</h1>
+            <h1 style="padding-top: 50px" class="text-center">Actualités</h1>
         </div>
 
 

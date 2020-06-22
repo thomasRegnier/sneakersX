@@ -65103,7 +65103,7 @@ var staticRenderFns = [
             staticClass: "text-center",
             staticStyle: { "padding-top": "50px" }
           },
-          [_vm._v("Actualitées")]
+          [_vm._v("Actualités")]
         )
       ]
     )
