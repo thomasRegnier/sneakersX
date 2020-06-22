@@ -13,14 +13,14 @@
                     <Carrousel :images="product.images"/>
                 </template>
                 <template v-else>
-                    <img width="100%" :src="'/storage/images/'+product.image" >
+                    <img width="100%" :src="product.image" >
                 </template>
             </div>
             <div class="rightProduct">
                 <!--<article class="productBrand">{{ product.brand.name }}</article>-->
                 <div class="d-flex align-items-center justify-content-between">
                     <article style="font-size: 150%">{{ product.brand.name }}</article>
-                    <img style="width: 50px" :src="'/storage/images/'+product.brand.logo">
+                    <img style="width: 50px" :src="product.brand.logo">
                 </div>
 
 

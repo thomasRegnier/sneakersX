@@ -76,7 +76,7 @@
             },
 
             imagePath(elem){
-                return '/storage/images/'+elem
+                return elem
             },
 
             deleteSomething(elem){

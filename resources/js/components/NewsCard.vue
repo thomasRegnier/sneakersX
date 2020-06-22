@@ -33,7 +33,7 @@
 
         computed: {
             image(){
-                return 'storage/images/'+this.news.image
+                return this.news.image
             }
         },
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Brand;
 use Illuminate\Http\Request;
 use Validator;
+use JD\Cloudder\Facades\Cloudder;
+
 
 class BrandController extends Controller
 {
@@ -59,17 +61,22 @@ class BrandController extends Controller
         $logo = time().'.'.request()->logo->getClientOriginalExtension();
         $banner = 2 + time().'.'.request()->banner->getClientOriginalExtension();
 
+        Cloudder::upload($request->file('logo'));
+        $cloundary_upload = Cloudder::getResult();
+
+        Cloudder::upload($request->file('banner'));
+        $banner_upload = Cloudder::getResult();
 
         Brand::create([
             'name' => $request->name,
             'description' => $request->description,
-            'logo' => $logo,
-            'banner' => $banner
+            'logo' => $cloundary_upload['url'],
+            'banner' => $banner_upload['url']
 
         ]);
 
-        request()->logo->move(public_path('../storage/app/public/images'), $logo);
-        request()->banner->move(public_path('../storage/app/public/images'), $banner);
+      //  request()->logo->move(public_path('../storage/app/public/images'), $logo);
+      //  request()->banner->move(public_path('../storage/app/public/images'), $banner);
 
         return response()
             ->json(['success' => true ]);
@@ -138,26 +145,34 @@ class BrandController extends Controller
                     return response()
                         ->json(['error' => $message ], 422 );
                 }
+            $cloundary_upload = false;
+            $banner_upload = false;
 
-                if($request->logo !== $brand->logo){
 
-                    $logo = time().'.'.request()->logo->getClientOriginalExtension();
-                    request()->logo->move(public_path('../storage/app/public/images'), $logo);
-                    unlink('../storage/app/public/images/'.$brand->logo);
+        if($request->logo !== $brand->logo){
 
+//                    $logo = time().'.'.request()->logo->getClientOriginalExtension();
+//                    request()->logo->move(public_path('../storage/app/public/images'), $logo);
+//                    unlink('../storage/app/public/images/'.$brand->logo);
+
+                    Cloudder::upload($request->file('logo'));
+                    $cloundary_upload = Cloudder::getResult();
                 }
 
                 if($request->banner !== $brand->banner){
-                 $banner = 2 + time().'.'.request()->banner->getClientOriginalExtension();
-                 request()->banner->move(public_path('../storage/app/public/images'), $banner);
-                 unlink('../storage/app/public/images/'.$brand->banner);
+//                 $banner = 2 + time().'.'.request()->banner->getClientOriginalExtension();
+//                 request()->banner->move(public_path('../storage/app/public/images'), $banner);
+//                 unlink('../storage/app/public/images/'.$brand->banner);
+
+                    Cloudder::upload($request->file('banner'));
+                    $banner_upload = Cloudder::getResult();
                 }
 
                 $brand->update([
                         'name' => $request->name,
                         'description' => $request->description,
-                        'logo' => $logo ?? $request->logo,
-                        'banner' => $banner ?? $request->banner,
+                        'logo' => $cloundary_upload ? $cloundary_upload['url'] : $brand->logo,
+                        'banner' => $banner_upload ? $cloundary_upload['url'] : $brand->banner
                 ]
                 );
 
@@ -181,8 +196,8 @@ class BrandController extends Controller
                 ->json(["error" => "Cet identifiant est inconnu"], 404);
         }
 
-        unlink('../storage/app/public/images/'.$brand->logo);
-        unlink('../storage/app/public/images/'.$brand->banner);
+      //  unlink('../storage/app/public/images/'.$brand->logo);
+      //  unlink('../storage/app/public/images/'.$brand->banner);
 
         $brand->delete();
 

@@ -79,7 +79,7 @@
             },
 
             imagePath(elem){
-                return 'storage/images/'+elem
+                return elem
             },
 
             goNews(elem){

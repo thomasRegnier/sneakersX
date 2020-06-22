@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Image;
 use Illuminate\Http\Request;
 use Validator;
+
+use JD\Cloudder\Facades\Cloudder;
+
 class ImageController extends Controller
 {
     /**
@@ -50,11 +53,14 @@ class ImageController extends Controller
                 ->json(['error' => $message ], 422 );
         }
 
-        $image = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('../storage/app/public/images'), $image);
+//        $image = time().'.'.request()->image->getClientOriginalExtension();
+//        request()->image->move(public_path('../storage/app/public/images'), $image);
+
+        Cloudder::upload($request->file('image'));
+        $cloundary_upload = Cloudder::getResult();
 
        $newImage = Image::create([
-            'name' => $image,
+            'name' => $cloundary_upload['url'],
             'product_id' => $request->product_id,
         ]);
 
@@ -113,7 +119,7 @@ class ImageController extends Controller
                 ->json(["error" => "Cet identifiant est inconnu"], 404);
         }
 
-        unlink('../storage/app/public/images/'.$image->name);
+      //  unlink('../storage/app/public/images/'.$image->name);
 
         $image->delete();
 

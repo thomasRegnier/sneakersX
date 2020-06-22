@@ -46,7 +46,7 @@
 
         computed: {
             image(){
-                return '/storage/images/'+this.oneNews.image
+                return this.oneNews.image
             }
         },
 

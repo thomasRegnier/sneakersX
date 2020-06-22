@@ -6,6 +6,8 @@ use App\news;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Validator;
+use JD\Cloudder\Facades\Cloudder;
+
 class NewsController extends Controller
 {
     /**
@@ -70,19 +72,22 @@ class NewsController extends Controller
                 ->json(['error' => $message ], 422 );
         }
 
-        $image = time().'.'.request()->image->getClientOriginalExtension();
+      //  $image = time().'.'.request()->image->getClientOriginalExtension();
+      //  Cloudder::upload($image, null, [], []);
+
+        Cloudder::upload($request->file('image'));
+        $cloundary_upload = Cloudder::getResult();
+
 
         news::create([
             'title' => $request->title,
             'content' => $request->contentNews,
             'description' => $request->description,
             'author' => $request->author,
-            'image' => $image,
+            'image' => $cloundary_upload['url'],
             'publish_at' => $request->publish_at
-
         ]);
-
-        request()->image->move(public_path('../storage/app/public/images'), $image);
+      //  request()->image->move(public_path('../storage/app/public/images'), $image);
 
         return response()
             ->json(['success' => true ]);
@@ -148,22 +153,26 @@ class NewsController extends Controller
 
         if($request->image !== $news->image){
 
+            Cloudder::upload($request->file('image'));
+            $cloundary_upload = Cloudder::getResult();
 
-            $image = time().'.'.request()->image->getClientOriginalExtension();
-            request()->image->move(public_path('../storage/app/public/images'), $image);
-            unlink('../storage/app/public/images/'.$news->image);
+//            $image = time().'.'.request()->image->getClientOriginalExtension();
+//            request()->image->move(public_path('../storage/app/public/images'), $image);
+//            unlink('../storage/app/public/images/'.$news->image);
 
         }
 
 
        // $request->image = $image;
 
+        $cloundary_upload = false;
+
         $news->update([
                 'title' => $request->title,
                 'content' => $request->contentNews,
                 'description' => $request->description,
                 'author' => $request->author,
-                'image' => $image ?? $request->image,
+                'image' => $cloundary_upload ? $cloundary_upload['url'] : $news->image,
                 'publish_at' => $request->publish_at,
                 'active' => $request->isActive
         ]
@@ -190,7 +199,7 @@ class NewsController extends Controller
                 ->json(["error" => "Cet identifiant est inconnu"], 404);
         }
 
-        unlink('../storage/app/public/images/'.$news->image);
+      //  unlink('../storage/app/public/images/'.$news->image);
 
         $news->delete();
 

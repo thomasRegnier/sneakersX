@@ -56,7 +56,7 @@
                 },
 
                 imagePath(elem){
-                    return 'storage/images/'+elem
+                    return elem
                 },
 
                 goNews(elem){
@@ -157,7 +157,6 @@
         transition: ease-in-out 0.3s;
         opacity: 0;
         cursor: pointer;
-
     }
 
 

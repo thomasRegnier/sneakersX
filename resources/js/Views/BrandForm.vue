@@ -49,7 +49,7 @@
             </div>
 
             <div v-if="forUpdate && !imageChange" class="d-flex align-items-center justify-content-center" style="padding: 20px">
-                <img style="max-width: 200px; margin: auto" :src="imagePath(brand.logo)">
+                <img style="max-width: 200px; margin: auto" :src="brand.logo">
             </div>
 
 
@@ -76,7 +76,7 @@
             </div>
 
             <div v-if="forUpdate && !bannerChange" class="d-flex align-items-center justify-content-center" style="padding: 20px">
-                <img style="max-width: 200px; margin: auto" :src="imagePath(brand.banner)">
+                <img style="max-width: 200px; margin: auto" :src="brand.banner">
             </div>
 
 
@@ -337,7 +337,7 @@
             },
 
             imagePath(elem){
-                return '/storage/images/'+elem
+                return elem
             },
 
 

@@ -27,7 +27,7 @@
                             <img v-else-if="column === 'banner'" :src="imagePath(data['banner'])">
                             <span v-else-if="column === 'brand'">
                                 {{ data['brand'].name }}
-                                <img style="width: 50px" :src="'storage/images/'+data['brand'].logo">
+                                <img style="width: 50px" :src="data['brand'].logo">
                             </span>
                             <span v-else-if="column === 'active'">
                                 {{ (data['active']) === 1 ? "Oui" : "Non" }}
@@ -70,7 +70,7 @@
 
         methods:{
             imagePath(elem){
-                return 'storage/images/'+elem
+                return elem
             },
 
             addSomething(){

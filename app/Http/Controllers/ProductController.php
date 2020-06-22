@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
 use App\Image;
+
+use JD\Cloudder\Facades\Cloudder;
+
+
 class ProductController extends Controller
 {
     /**
@@ -90,13 +94,16 @@ class ProductController extends Controller
                 ->json(['error' => $message ], 422 );
         }
 
-        $image = time().'.'.request()->image->getClientOriginalExtension();
+       // $image = time().'.'.request()->image->getClientOriginalExtension();
+
+        Cloudder::upload($request->file('image'));
+        $cloundary_upload = Cloudder::getResult();
 
       $product =  Product::create([
             'name' => $request->name,
             'description' => $request->description,
             'brand_id' => $request->brand_id,
-            'image' => $image,
+            'image' => $cloundary_upload['url'],
             'price' => $request->price,
             'active' => $request->active,
             'publish_at' => $request->publish_at
@@ -107,7 +114,7 @@ class ProductController extends Controller
 //            'product_id' => $product->id
 //        ]);
 
-        request()->image->move(public_path('../storage/app/public/images'), $image);
+      //  request()->image->move(public_path('../storage/app/public/images'), $image);
 
         return response()
             ->json(['success' => true ]);
@@ -170,12 +177,15 @@ class ProductController extends Controller
                 ->json(['error' => $message ], 422 );
         }
 
+        $cloundary_upload = false;
 
         if($request->image !== $product->image){
 
-            $image = time().'.'.request()->image->getClientOriginalExtension();
-            request()->image->move(public_path('../storage/app/public/images'), $image);
-            unlink('../storage/app/public/images/'.$product->image);
+//            $image = time().'.'.request()->image->getClientOriginalExtension();
+//            request()->image->move(public_path('../storage/app/public/images'), $image);
+//            unlink('../storage/app/public/images/'.$product->image);
+            Cloudder::upload($request->file('image'));
+            $cloundary_upload = Cloudder::getResult();
         }
 
 
@@ -183,7 +193,7 @@ class ProductController extends Controller
                 'name' => $request->name,
                 'description' => $request->description,
                 'brand_id' => $request->brand_id,
-                'image' => $image ?? $request->image,
+                'image' => $cloundary_upload ? $cloundary_upload['url'] : $product->image,
                 'price' => $request->price,
                 'active' => $request->active,
                 'publish_at' => $request->publish_at
@@ -210,12 +220,12 @@ class ProductController extends Controller
                 ->json(["error" => "Cet identifiant est inconnu"], 404);
         }
 
-        unlink('../storage/app/public/images/'.$product->image);
+     //   unlink('../storage/app/public/images/'.$product->image);
 
         if(count($product->images) > 0){
             foreach ($product->images as $img){
                 $i = Image::find($img['id']);
-                unlink('../storage/app/public/images/'.$i->name);
+           //     unlink('../storage/app/public/images/'.$i->name);
 
                 $i->delete();
             }

@@ -2702,7 +2702,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     }
   }
 });
@@ -2836,7 +2836,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     imagePath: function imagePath(elem) {
-      return 'storage/images/' + elem;
+      return elem;
     },
     getNews: function getNews() {
       var _this = this;
@@ -3305,7 +3305,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       //   this.GET_PRODUCTS()
     },
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     }
   })
 });
@@ -4712,7 +4712,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: {
     image: function image() {
-      return '/storage/images/' + this.oneNews.image;
+      return this.oneNews.image;
     }
   },
   methods: {
@@ -5561,7 +5561,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     }
   })
 });
@@ -6225,7 +6225,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     }
   }
 });
@@ -7288,7 +7288,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imagePath: function imagePath(elem) {
-      return 'storage/images/' + elem;
+      return elem;
     },
     goNews: function goNews(elem) {
       this.$router.push({
@@ -7364,7 +7364,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imagePath: function imagePath(elem) {
-      return 'storage/images/' + elem;
+      return elem;
     },
     goNews: function goNews(elem) {
       this.$router.push({
@@ -7921,7 +7921,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     image: function image() {
-      return 'storage/images/' + this.news.image;
+      return this.news.image;
     }
   },
   methods: {
@@ -8197,7 +8197,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     },
     sortByPrice: function sortByPrice() {
       this.priceSort = !this.priceSort;
@@ -8308,7 +8308,7 @@ __webpack_require__.r(__webpack_exports__);
       this.addImage();
     },
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     },
     deleteSomething: function deleteSomething(elem) {
       var _this = this;
@@ -8683,7 +8683,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     imagePath: function imagePath(elem) {
-      return 'storage/images/' + elem;
+      return elem;
     },
     addSomething: function addSomething() {
       this.$emit("addItems");
@@ -67099,10 +67099,7 @@ var render = function() {
               ? [_c("Carrousel", { attrs: { images: _vm.product.images } })]
               : [
                   _c("img", {
-                    attrs: {
-                      width: "100%",
-                      src: "/storage/images/" + _vm.product.image
-                    }
+                    attrs: { width: "100%", src: _vm.product.image }
                   })
                 ]
           ],
@@ -67122,7 +67119,7 @@ var render = function() {
               _vm._v(" "),
               _c("img", {
                 staticStyle: { width: "50px" },
-                attrs: { src: "/storage/images/" + _vm.product.brand.logo }
+                attrs: { src: _vm.product.brand.logo }
               })
             ]
           ),
@@ -70792,9 +70789,7 @@ var render = function() {
                           ),
                           _c("img", {
                             staticStyle: { width: "50px" },
-                            attrs: {
-                              src: "storage/images/" + data["brand"].logo
-                            }
+                            attrs: { src: data["brand"].logo }
                           })
                         ])
                       : column === "active"
