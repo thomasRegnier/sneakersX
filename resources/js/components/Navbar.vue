@@ -36,12 +36,12 @@
                     >
                 </div>
 
-                <router-link :to="{ path: '/News' }" @click="forMenu">News</router-link>
+                <router-link :to="{ path: '/News' }" @click="forMenu">Actualités</router-link>
                 <router-link :to="{ path: '/Catalogue' }">Catalogue</router-link>
                 <router-link :to="{ path: '/Contact' }">Contact</router-link>
                 <div v-if="!user">
-                    <router-link :to="{ path: '/Login' }">Login</router-link>
-                    <router-link :to="{ path: '/Register' }">Register</router-link>
+                    <router-link :to="{ path: '/Login' }">Connexion</router-link>
+                    <router-link :to="{ path: '/Register' }">Inscription</router-link>
                 </div>
                 <div v-else class="toLogout">
                     <article class="nameUser">{{ user.name }}</article>
@@ -108,12 +108,12 @@
 
                 <div class="insideMobileNav" style="padding-left: 19px">
                     <router-link :to="{ path: '/' }" v-on:click.native="forMenu">Home</router-link>
-                    <router-link :to="{ path: '/News' }" v-on:click.native="forMenu">News</router-link>
+                    <router-link :to="{ path: '/News' }" v-on:click.native="forMenu">Actualités</router-link>
                     <router-link :to="{ path: '/Catalogue' }" v-on:click.native="forMenu">Catalogue</router-link>
                     <router-link :to="{ path: '/Contact' }" v-on:click.native="forMenu">Contact</router-link>
                     <div style="padding-top: 10px" v-if="!user">
-                        <router-link :to="{ path: '/Login' }" v-on:click.native="forMenu">Login</router-link>
-                        <router-link :to="{ path: '/Register' }" v-on:click.native="forMenu" >Register</router-link>
+                        <router-link :to="{ path: '/Login' }" v-on:click.native="forMenu">Connexion</router-link>
+                        <router-link :to="{ path: '/Register' }" v-on:click.native="forMenu" >Inscription</router-link>
                     </div>
                     <div style="padding-top: 10px" v-else class="toLogout">
                         <article class="nameUser">{{ user.name }}</article>

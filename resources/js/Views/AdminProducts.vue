@@ -40,6 +40,7 @@
                 axios.get('/api/admin/products')
                     .then(res => {
                         {
+                            console.log(res.data)
                             this.brands = res.data
                         }
                     }).catch(err => {

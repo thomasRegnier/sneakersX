@@ -30,7 +30,7 @@
                 </div>
             </template>
             <article v-else class="text-center" style="font-size: 90%; padding: 10px">
-                No product in your cart
+                Aucun produit dans le panier
             </article>
         </div>
 
@@ -39,7 +39,7 @@
             <article style="font-size: 120%; font-weight: bold"> {{ totalCart }} € </article>
         </div>
         <div style="padding: 0px 20px 20px 20px">
-            <button @click="goCart" style="width: 100%" class="btn btn-dark">Go cart</button>
+            <button :disabled="isDisabled" @click="goCart" style="width: 100%" class="btn btn-dark">Panier</button>
         </div>
     </div>
 </template>
@@ -148,7 +148,14 @@
         name: 'ShortCart',
 
         computed: {
-            ...mapGetters(["cart", "cartCount", "totalCart"])
+            ...mapGetters(["cart", "cartCount", "totalCart"]),
+            isDisabled(){
+                if(this.cartCount === 0){
+                    return true
+                }else{
+                    return false
+                }
+            }
         },
 
         methods: {
@@ -156,7 +163,7 @@
             ...mapActions(['TRASH_IN_CART', 'ADD_TO_CART',  'UPDATE_QUANTITY_PLUS','UPDATE_QUANTITY_LESS']),
 
             imagePath(elem){
-                return '/storage/images/'+elem
+                return elem
             },
 
             plusQty(elem){

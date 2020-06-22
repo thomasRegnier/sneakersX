@@ -2952,6 +2952,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/admin/products').then(function (res) {
         {
+          console.log(res.data);
           _this.brands = res.data;
         }
       })["catch"](function (err) {
@@ -3564,7 +3565,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['TRASH_IN_CART', 'ADD_TO_CART', 'UPDATE_QUANTITY_PLUS', 'UPDATE_QUANTITY_LESS']), {
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     },
     plusQty: function plusQty(elem) {
       console.log(elem);
@@ -7262,7 +7263,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -8539,10 +8539,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ShortCart',
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["cart", "cartCount", "totalCart"])),
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["cart", "cartCount", "totalCart"]), {
+    isDisabled: function isDisabled() {
+      if (this.cartCount === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }),
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['TRASH_IN_CART', 'ADD_TO_CART', 'UPDATE_QUANTITY_PLUS', 'UPDATE_QUANTITY_LESS']), {
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     },
     plusQty: function plusQty(elem) {
       this.UPDATE_QUANTITY_PLUS(elem);
@@ -8614,6 +8622,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -9044,7 +9055,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     imagePath: function imagePath(elem) {
-      return '/storage/images/' + elem;
+      return elem;
     }
   }
 });
@@ -65092,7 +65103,7 @@ var staticRenderFns = [
             staticClass: "text-center",
             staticStyle: { "padding-top": "50px" }
           },
-          [_vm._v("All news")]
+          [_vm._v("Actualitées")]
         )
       ]
     )
@@ -65319,7 +65330,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\n                No product in your cart\n            "
+                      "\n               Aucun produit dans le panier pour le moment\n            "
                     )
                   ]
                 )
@@ -65334,7 +65345,7 @@ var render = function() {
               {
                 staticStyle: { "font-size": "150%", "padding-bottom": "10px" }
               },
-              [_vm._v("\n                    Summary\n                ")]
+              [_vm._v("\n                    Sommaire\n                ")]
             ),
             _vm._v(" "),
             _c(
@@ -65344,7 +65355,7 @@ var render = function() {
                   "d-flex justify-content-between align-items-center priceLine"
               },
               [
-                _c("article", [_vm._v("Quantity Products : ")]),
+                _c("article", [_vm._v("Nombre de produits : ")]),
                 _vm._v(" "),
                 _c(
                   "article",
@@ -65363,7 +65374,7 @@ var render = function() {
                   "d-flex justify-content-between align-items-center priceLine"
               },
               [
-                _c("article", [_vm._v("Subtotal: ")]),
+                _c("article", [_vm._v("Sous-total: ")]),
                 _vm._v(" "),
                 _c(
                   "article",
@@ -65404,7 +65415,7 @@ var render = function() {
                 attrs: { disabled: _vm.isDisabled },
                 on: { click: _vm.goToOrder }
               },
-              [_vm._v("Payment")]
+              [_vm._v("Commander")]
             )
           ])
         ])
@@ -65429,7 +65440,7 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticStyle: { padding: "10px" } }, [
-          _c("h1", { staticClass: "text-center" }, [_vm._v("Cart")])
+          _c("h1", { staticClass: "text-center" }, [_vm._v("Panier")])
         ])
       ]
     )
@@ -65445,7 +65456,7 @@ var staticRenderFns = [
           "d-flex justify-content-between align-items-center priceLine"
       },
       [
-        _c("article", [_vm._v("Shipping : ")]),
+        _c("article", [_vm._v("Livraison : ")]),
         _vm._v(" "),
         _c(
           "article",
@@ -68283,7 +68294,10 @@ var render = function() {
               "div",
               {
                 staticStyle: {
-                  "padding-top": "100px",
+                  height: "50vh",
+                  display: "flex",
+                  "justify-content": "center",
+                  "align-items": "center",
                   "text-align": "center",
                   "font-size": "180%"
                 }
@@ -69763,7 +69777,7 @@ var render = function() {
                   attrs: { to: { path: "/News" } },
                   on: { click: _vm.forMenu }
                 },
-                [_vm._v("News")]
+                [_vm._v("Actualités")]
               ),
               _vm._v(" "),
               _c("router-link", { attrs: { to: { path: "/Catalogue" } } }, [
@@ -69779,13 +69793,13 @@ var render = function() {
                     "div",
                     [
                       _c("router-link", { attrs: { to: { path: "/Login" } } }, [
-                        _vm._v("Login")
+                        _vm._v("Connexion")
                       ]),
                       _vm._v(" "),
                       _c(
                         "router-link",
                         { attrs: { to: { path: "/Register" } } },
-                        [_vm._v("Register")]
+                        [_vm._v("Inscription")]
                       )
                     ],
                     1
@@ -69996,7 +70010,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("News")]
+                  [_vm._v("Actualités")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -70040,7 +70054,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("Login")]
+                          [_vm._v("Connexion")]
                         ),
                         _vm._v(" "),
                         _c(
@@ -70053,7 +70067,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v("Register")]
+                          [_vm._v("Inscription")]
                         )
                       ],
                       1
@@ -70614,7 +70628,7 @@ var render = function() {
                 staticClass: "text-center",
                 staticStyle: { "font-size": "90%", padding: "10px" }
               },
-              [_vm._v("\n            No product in your cart\n        ")]
+              [_vm._v("\n            Aucun produit dans le panier\n        ")]
             )
       ],
       2
@@ -70644,9 +70658,10 @@ var render = function() {
         {
           staticClass: "btn btn-dark",
           staticStyle: { width: "100%" },
+          attrs: { disabled: _vm.isDisabled },
           on: { click: _vm.goCart }
         },
-        [_vm._v("Go cart")]
+        [_vm._v("Panier")]
       )
     ])
   ])
@@ -70713,165 +70728,203 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticStyle: { width: "95vw", margin: "auto" } }, [
-    _c("div", { staticClass: "table-wrapper" }, [
-      _c("div", { staticClass: "table-title" }, [
-        _c(
-          "div",
-          { staticClass: "d-flex justify-content-between align-items-center" },
-          [
-            _c("div", { staticClass: "col-sm-4" }, [
-              _c("h2", [_vm._v(_vm._s(_vm.title))])
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticStyle: {
-                  "background-color": "white",
-                  color: "#566787",
-                  padding: "5px 10px",
-                  "border-radius": "5px"
-                },
-                on: { click: _vm.addSomething }
-              },
-              [
-                _c("i", { staticClass: "fas fa-plus-circle" }),
-                _vm._v("\n                    Ajouter\n                ")
-              ]
-            )
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("table", { staticClass: "table table-striped table-hover" }, [
-        _c("thead", [
+    _c(
+      "div",
+      {
+        staticClass: "table-wrapper",
+        staticStyle: { "margin-bottom": "200px" }
+      },
+      [
+        _c("div", { staticClass: "table-title" }, [
           _c(
-            "tr",
+            "div",
+            {
+              staticClass: "d-flex justify-content-between align-items-center"
+            },
             [
-              _vm._l(_vm.fields, function(field, index) {
-                return _c("th", { key: index }, [_vm._v(_vm._s(field))])
-              }),
+              _c("div", { staticClass: "col-sm-4" }, [
+                _c("h2", [_vm._v(_vm._s(_vm.title))])
+              ]),
               _vm._v(" "),
-              _c("th", [_vm._v("Actions")])
-            ],
-            2
+              _c(
+                "button",
+                {
+                  staticStyle: {
+                    "background-color": "white",
+                    color: "#566787",
+                    padding: "5px 10px",
+                    "border-radius": "5px"
+                  },
+                  on: { click: _vm.addSomething }
+                },
+                [
+                  _c("i", { staticClass: "fas fa-plus-circle" }),
+                  _vm._v("\n                    Ajouter\n                ")
+                ]
+              )
+            ]
           )
         ]),
         _vm._v(" "),
-        _c(
-          "tbody",
-          _vm._l(_vm.datas, function(data, index) {
-            return _c(
-              "tr",
-              { key: index },
-              [
-                _vm._l(_vm.columns, function(column, indexCol) {
-                  return _c("td", { key: indexCol }, [
-                    column === "image"
-                      ? _c("img", {
-                          attrs: { src: _vm.imagePath(data["image"]) }
-                        })
-                      : column === "logo"
-                      ? _c("img", {
-                          staticClass: "logobrand",
-                          attrs: { src: _vm.imagePath(data["logo"]) }
-                        })
-                      : column === "banner"
-                      ? _c("img", {
-                          attrs: { src: _vm.imagePath(data["banner"]) }
-                        })
-                      : column === "brand"
-                      ? _c("span", [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(data["brand"].name) +
-                              "\n                            "
-                          ),
-                          _c("img", {
-                            staticStyle: { width: "50px" },
-                            attrs: { src: data["brand"].logo }
-                          })
+        _vm.datas.length > 0
+          ? _c("table", { staticClass: "table table-striped table-hover" }, [
+              _c("thead", [
+                _c(
+                  "tr",
+                  [
+                    _vm._l(_vm.fields, function(field, index) {
+                      return _c("th", { key: index }, [_vm._v(_vm._s(field))])
+                    }),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Actions")])
+                  ],
+                  2
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.datas, function(data, index) {
+                  return _c(
+                    "tr",
+                    { key: index },
+                    [
+                      _vm._l(_vm.columns, function(column, indexCol) {
+                        return _c("td", { key: indexCol }, [
+                          column === "image"
+                            ? _c("img", {
+                                attrs: { src: _vm.imagePath(data["image"]) }
+                              })
+                            : column === "logo"
+                            ? _c("img", {
+                                staticClass: "logobrand",
+                                attrs: { src: _vm.imagePath(data["logo"]) }
+                              })
+                            : column === "banner"
+                            ? _c("img", {
+                                attrs: { src: _vm.imagePath(data["banner"]) }
+                              })
+                            : column === "brand"
+                            ? _c("span", [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(data["brand"].name) +
+                                    "\n                            "
+                                ),
+                                _c("img", {
+                                  staticStyle: { width: "50px" },
+                                  attrs: { src: data["brand"].logo }
+                                })
+                              ])
+                            : column === "active"
+                            ? _c("span", [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(
+                                      data["active"] === 1 ? "Oui" : "Non"
+                                    ) +
+                                    "\n                        "
+                                )
+                              ])
+                            : column === "publish_at"
+                            ? _c("span", [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(
+                                      _vm
+                                        .moment(data["publish_at"])
+                                        .format("LL")
+                                    ) +
+                                    "\n                        "
+                                )
+                              ])
+                            : column === "images"
+                            ? _c(
+                                "span",
+                                _vm._l(data["images"], function(img, index) {
+                                  return _c("img", {
+                                    staticStyle: { width: "20px" },
+                                    attrs: { src: _vm.imagePath(img.name) }
+                                  })
+                                }),
+                                0
+                              )
+                            : column === "description"
+                            ? _c(
+                                "span",
+                                {
+                                  domProps: {
+                                    innerHTML: _vm._s(data["description"])
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(data["description"]) +
+                                      "\n                        "
+                                  )
+                                ]
+                              )
+                            : _c("span", [_vm._v(_vm._s(data[column]))])
                         ])
-                      : column === "active"
-                      ? _c("span", [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(data["active"] === 1 ? "Oui" : "Non") +
-                              "\n                        "
-                          )
-                        ])
-                      : column === "publish_at"
-                      ? _c("span", [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(
-                                _vm.moment(data["publish_at"]).format("LL")
-                              ) +
-                              "\n                        "
-                          )
-                        ])
-                      : column === "images"
-                      ? _c(
-                          "span",
-                          _vm._l(data["images"], function(img, index) {
-                            return _c("img", {
-                              staticStyle: { width: "20px" },
-                              attrs: { src: _vm.imagePath(img.name) }
-                            })
-                          }),
-                          0
-                        )
-                      : column === "description"
-                      ? _c(
-                          "span",
-                          {
-                            domProps: { innerHTML: _vm._s(data["description"]) }
+                      }),
+                      _vm._v(" "),
+                      _c("td", { staticStyle: { "font-size": "120%" } }, [
+                        _c("i", {
+                          staticClass: "far fa-edit",
+                          staticStyle: {
+                            color: "dodgerblue",
+                            "margin-right": "5px",
+                            cursor: "pointer"
                           },
-                          [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(data["description"]) +
-                                "\n                        "
-                            )
-                          ]
-                        )
-                      : _c("span", [_vm._v(_vm._s(data[column]))])
-                  ])
+                          on: {
+                            click: function($event) {
+                              return _vm.editSomething(data["id"])
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("i", {
+                          staticClass: "fas fa-trash-alt",
+                          staticStyle: { color: "#ff6949", cursor: "pointer" },
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteSomething(data["id"])
+                            }
+                          }
+                        })
+                      ])
+                    ],
+                    2
+                  )
                 }),
-                _vm._v(" "),
-                _c("td", { staticStyle: { "font-size": "120%" } }, [
-                  _c("i", {
-                    staticClass: "far fa-edit",
+                0
+              )
+            ])
+          : _c(
+              "div",
+              {
+                staticClass: "d-flex justify-content-center align-items-center",
+                staticStyle: { height: "50vh", "font-size": "160%" }
+              },
+              [
+                _vm._v("\n            Aucune données "),
+                _c(
+                  "span",
+                  {
                     staticStyle: {
-                      color: "dodgerblue",
+                      "margin-left": "5px",
                       "margin-right": "5px",
-                      cursor: "pointer"
-                    },
-                    on: {
-                      click: function($event) {
-                        return _vm.editSomething(data["id"])
-                      }
+                      "text-decoration": "underline"
                     }
-                  }),
-                  _vm._v(" "),
-                  _c("i", {
-                    staticClass: "fas fa-trash-alt",
-                    staticStyle: { color: "#ff6949", cursor: "pointer" },
-                    on: {
-                      click: function($event) {
-                        return _vm.deleteSomething(data["id"])
-                      }
-                    }
-                  })
-                ])
-              ],
-              2
+                  },
+                  [_vm._v(_vm._s(_vm.title))]
+                ),
+                _vm._v(" pour le moment\n        ")
+              ]
             )
-          }),
-          0
-        )
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
@@ -71021,7 +71074,7 @@ var render = function() {
               [
                 _c("img", {
                   staticStyle: { "max-width": "200px", margin: "auto" },
-                  attrs: { src: _vm.imagePath(_vm.brand.logo) }
+                  attrs: { src: _vm.brand.logo }
                 })
               ]
             )
@@ -71092,7 +71145,7 @@ var render = function() {
               [
                 _c("img", {
                   staticStyle: { "max-width": "200px", margin: "auto" },
-                  attrs: { src: _vm.imagePath(_vm.brand.banner) }
+                  attrs: { src: _vm.brand.banner }
                 })
               ]
             )

@@ -203,6 +203,7 @@ class NewsController extends Controller
 
         $news->delete();
 
+
         return response()
             ->json(["error" => Null ]);
     }

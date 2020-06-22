@@ -6,6 +6,7 @@ use App\Brand;
 use Illuminate\Http\Request;
 use Validator;
 use JD\Cloudder\Facades\Cloudder;
+use App\Product;
 
 
 class BrandController extends Controller
@@ -198,6 +199,24 @@ class BrandController extends Controller
 
       //  unlink('../storage/app/public/images/'.$brand->logo);
       //  unlink('../storage/app/public/images/'.$brand->banner);
+
+
+        $prds = Product::where('brand_id', $id)->get();
+
+
+        foreach ($prds as $prd){
+            $product = Product::find($prd->id);
+            $product->delete();
+
+            if(count($product->images) > 0){
+                foreach ($product->images as $img){
+                    $i = Image::find($img['id']);
+                    //     unlink('../storage/app/public/images/'.$i->name);
+
+                    $i->delete();
+                }
+            }
+        }
 
         $brand->delete();
 

@@ -10,7 +10,7 @@
             />
         </template>
         <template v-else>
-            <div style="padding-top: 100px; text-align: center; font-size: 180%">
+            <div style="height: 50vh; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 180%">
                Oops no results . . .
             </div>
         </template>

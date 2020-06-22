@@ -1,6 +1,6 @@
 <template>
     <div style="width: 95vw; margin: auto">
-        <div class="table-wrapper">
+        <div class="table-wrapper" style="margin-bottom: 200px">
             <div class="table-title">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="col-sm-4">
@@ -12,7 +12,7 @@
                     </button>
                 </div>
             </div>
-            <table class="table table-striped table-hover">
+            <table  v-if="datas.length > 0" class="table table-striped table-hover" >
                 <thead>
                 <tr>
                     <th  v-for="(field, index) in fields" :key="index">{{ field }}</th>
@@ -50,6 +50,9 @@
                     </tr>
                 </tbody>
             </table>
+            <div  v-else class="d-flex justify-content-center align-items-center" style="height: 50vh; font-size: 160%">
+                Aucune données <span style="margin-left: 5px; margin-right: 5px; text-decoration: underline">{{ title }}</span> pour le moment
+            </div>
         </div>
     </div>
 </template>

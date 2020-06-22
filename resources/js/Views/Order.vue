@@ -39,7 +39,7 @@
                             <!--<article class="cartName col-2">Quantity</article>-->
 
                             <article class="cartName col-3">
-                                <span class="text-capitalize">QUANITÉ</span>
+                                <span class="text-capitalize">QUANTITÉ</span>
                             </article>
 
                             <article class="cartName col-3">

@@ -3,7 +3,7 @@
         <GoBack/>
         <div class="container respCont" style="border-bottom: 1px dotted black; margin-bottom: 50px;" >
             <div style="padding: 10px">
-                <h1 class="text-center">Cart</h1>
+                <h1 class="text-center">Panier</h1>
             </div>
         </div>
 
@@ -37,31 +37,31 @@
                     </div>
                 </template>
                 <article class="noProduct" v-else style="font-size: 150%">
-                    No product in your cart
+                   Aucun produit dans le panier pour le moment
                 </article>
             </div>
             <div class="summaryCart">
                 <div class="insideSummary">
                     <article style="font-size: 150%; padding-bottom: 10px">
-                        Summary
+                        Sommaire
                     </article>
                     <div class="d-flex justify-content-between align-items-center priceLine">
-                        <article>Quantity Products : </article>
+                        <article>Nombre de produits : </article>
                         <article style="font-size: 120%; font-weight: bold"> {{ cartCount }} </article>
                     </div>
                     <div class="d-flex justify-content-between align-items-center priceLine">
-                        <article>Subtotal: </article>
+                        <article>Sous-total: </article>
                         <article style="font-size: 120%; font-weight: bold"> {{ totalCart }} € </article>
                     </div>
                     <div class="d-flex justify-content-between align-items-center priceLine">
-                        <article>Shipping : </article>
+                        <article>Livraison : </article>
                         <article style="font-size: 120%; font-weight: bold"> 0 € </article>
                     </div>
                     <div class="d-flex justify-content-between align-items-center priceLine">
                         <article>Total : </article>
                         <article style="font-size: 120%; font-weight: bold"> {{ totalCart }} € </article>
                     </div>
-                    <button @click="goToOrder" :disabled="isDisabled" style="width: 100%; margin-top: 20px" class="btn btn-dark">Payment</button>
+                    <button @click="goToOrder" :disabled="isDisabled" style="width: 100%; margin-top: 20px" class="btn btn-dark">Commander</button>
                 </div>
 
             </div>
@@ -247,7 +247,7 @@
             ...mapActions(['TRASH_IN_CART', 'ADD_TO_CART', 'UPDATE_QUANTITY_PLUS','UPDATE_QUANTITY_LESS']),
 
             imagePath(elem){
-                return '/storage/images/'+elem
+                return elem
             },
 
             plusQty(elem){

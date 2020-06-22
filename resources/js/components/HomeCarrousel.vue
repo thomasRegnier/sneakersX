@@ -29,7 +29,6 @@
                     <h3 class="h3-responsive">{{ news.title }}</h3>
                     <p>{{ news.description }}</p>
                     <button @click="goNews(news.id)" class="buttonInsideNews">Lire</button>
-
                 </div>
             </div>
 
