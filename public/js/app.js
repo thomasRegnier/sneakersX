@@ -5431,6 +5431,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(['brands'])),
   mounted: function mounted() {
+    this.GET_BRANDS();
+
     if (this.$route.params.id) {
       this.forUpdate = true;
       this.getOneBr(this.$route.params.id);
@@ -5440,7 +5442,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.product.active = 1;
     }
   },
-  methods: {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['GET_BRANDS']), {
     trySubmit: function trySubmit() {
       this.$v.$touch();
 
@@ -5561,7 +5563,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     imagePath: function imagePath(elem) {
       return '/storage/images/' + elem;
     }
-  }
+  })
 });
 
 /***/ }),

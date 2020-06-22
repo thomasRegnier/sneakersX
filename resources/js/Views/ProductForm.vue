@@ -193,7 +193,7 @@
     import axios from 'axios'
     import moment from 'moment'
 
-    import { mapGetters } from "vuex";
+    import { mapGetters, mapActions } from "vuex";
 
     import SecondaryImg from '../components/SecondaryImg'
 
@@ -285,6 +285,8 @@
         },
 
         mounted(){
+            this.GET_BRANDS()
+
             if (this.$route.params.id) {
                 this.forUpdate = true
                 this.getOneBr(this.$route.params.id)
@@ -296,6 +298,8 @@
 
         },
         methods: {
+
+            ...mapActions(['GET_BRANDS']),
 
             trySubmit() {
                 this.$v.$touch()

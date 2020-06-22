@@ -78,6 +78,7 @@ class NewsController extends Controller
             'description' => $request->description,
             'author' => $request->author,
             'image' => $image,
+            'publish_at' => $request->publish_at
 
         ]);
 
