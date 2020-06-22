@@ -205,7 +205,7 @@
             <div  style="padding-top: 20px" class="d-flex justify-content-between align-items-center sizeTo">
                 <div>
                     <article>
-                        Total
+                        Total :
                     </article>
                     <article class="forSize">
                         Taxes comprises
