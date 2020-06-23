@@ -3,14 +3,9 @@
             <div>
                 <img class="imgNews" :src="image">
             </div>
-            <div class="card-body insideNews">
+            <div class="insideNews">
                 <article class="newsTitle">{{news.title}}</article>
                 <article class="newsDesc">{{news.desc}}</article>
-                <div class="forButt">
-                    <article>{{moment(news.publish_at).format("LL")}}</article>
-
-                    <!--<button @click="goNews(news.id)" class="moreActu">Lire l'article</button>-->
-                </div>
             </div>
             <div class="overLay">
                 <button @click="goNews(news.id)" class="moreActu">Lire l'article</button>
@@ -74,6 +69,7 @@
         overflow: hidden;
         margin: 20px;
         position: relative;
+        border: none !important;
     }
     .moreActu{
         background-color: #000;

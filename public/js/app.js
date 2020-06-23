@@ -7929,11 +7929,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     news: {
@@ -14311,7 +14306,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.newsTitle[data-v-52fcf46e]{\n    font-size: 150%;\n    font-weight: bold;\n}\n.newsDesc[data-v-52fcf46e]{\n    color: grey;\n    padding: 10px 0px;\n}\n.forButt[data-v-52fcf46e]{\n    display: flex;\n    justify-content: space-between;\n    align-items:center;\n}\n.newsCard[data-v-52fcf46e]{\n    width: 300px;\n    overflow: hidden;\n    margin: 20px;\n    position: relative;\n}\n.moreActu[data-v-52fcf46e]{\n    background-color: #000;\n    border: 0;\n    border-radius: 3px;\n    color: #fff;\n    cursor: pointer;\n    font-family: 'Open Sans Condensed', sans-serif;\n    letter-spacing: 1px;\n    line-height: 1;\n    padding: 10px 15px;\n    cursor: pointer;\n    outline: none;\n    transition: ease 0.3s;\n}\n.imgNews[data-v-52fcf46e]{\n    width: 100%;\n    height: 200px;\n    objectif-fit: cover;\n}\n.insideNews[data-v-52fcf46e]{\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n.overLay[data-v-52fcf46e]{\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(153deg, rgba(0,0,0,0.36878501400560226) 100%, rgba(0,0,0,1) 100%);\n    position: absolute;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    opacity: 0;\n    transition: ease 0.2s;\n}\n.overLay[data-v-52fcf46e]:hover{\n    opacity: 1;\n}\n@media screen and (max-width: 700px) {\n.newsCard[data-v-52fcf46e]{\n        height: auto;\n        margin: 0;\n        width: 100%;\n}\n.imgNews[data-v-52fcf46e] {\n        width: 100%;\n        height: auto;\n}\n.card[data-v-52fcf46e]{\n        border-radius: 0px !important;\n        border: none;\n}\n}\n", ""]);
+exports.push([module.i, "\n.newsTitle[data-v-52fcf46e]{\n    font-size: 150%;\n    font-weight: bold;\n}\n.newsDesc[data-v-52fcf46e]{\n    color: grey;\n    padding: 10px 0px;\n}\n.forButt[data-v-52fcf46e]{\n    display: flex;\n    justify-content: space-between;\n    align-items:center;\n}\n.newsCard[data-v-52fcf46e]{\n    width: 300px;\n    overflow: hidden;\n    margin: 20px;\n    position: relative;\n    border: none !important;\n}\n.moreActu[data-v-52fcf46e]{\n    background-color: #000;\n    border: 0;\n    border-radius: 3px;\n    color: #fff;\n    cursor: pointer;\n    font-family: 'Open Sans Condensed', sans-serif;\n    letter-spacing: 1px;\n    line-height: 1;\n    padding: 10px 15px;\n    cursor: pointer;\n    outline: none;\n    transition: ease 0.3s;\n}\n.imgNews[data-v-52fcf46e]{\n    width: 100%;\n    height: 200px;\n    objectif-fit: cover;\n}\n.insideNews[data-v-52fcf46e]{\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n.overLay[data-v-52fcf46e]{\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(153deg, rgba(0,0,0,0.36878501400560226) 100%, rgba(0,0,0,1) 100%);\n    position: absolute;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    opacity: 0;\n    transition: ease 0.2s;\n}\n.overLay[data-v-52fcf46e]:hover{\n    opacity: 1;\n}\n@media screen and (max-width: 700px) {\n.newsCard[data-v-52fcf46e]{\n        height: auto;\n        margin: 0;\n        width: 100%;\n}\n.imgNews[data-v-52fcf46e] {\n        width: 100%;\n        height: auto;\n}\n.card[data-v-52fcf46e]{\n        border-radius: 0px !important;\n        border: none;\n}\n}\n", ""]);
 
 // exports
 
@@ -70188,19 +70183,13 @@ var render = function() {
       _c("img", { staticClass: "imgNews", attrs: { src: _vm.image } })
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "card-body insideNews" }, [
+    _c("div", { staticClass: "insideNews" }, [
       _c("article", { staticClass: "newsTitle" }, [
         _vm._v(_vm._s(_vm.news.title))
       ]),
       _vm._v(" "),
       _c("article", { staticClass: "newsDesc" }, [
         _vm._v(_vm._s(_vm.news.desc))
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "forButt" }, [
-        _c("article", [
-          _vm._v(_vm._s(_vm.moment(_vm.news.publish_at).format("LL")))
-        ])
       ])
     ]),
     _vm._v(" "),
