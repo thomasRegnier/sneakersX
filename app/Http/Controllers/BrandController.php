@@ -146,9 +146,9 @@ class BrandController extends Controller
                     return response()
                         ->json(['error' => $message ], 422 );
                 }
+
             $cloundary_upload = false;
             $banner_upload = false;
-
 
         if($request->logo !== $brand->logo){
 
@@ -173,7 +173,7 @@ class BrandController extends Controller
                         'name' => $request->name,
                         'description' => $request->description,
                         'logo' => $cloundary_upload ? $cloundary_upload['url'] : $brand->logo,
-                        'banner' => $banner_upload ? $cloundary_upload['url'] : $brand->banner
+                        'banner' => $banner_upload ? $banner_upload['url'] : $brand->banner
                 ]
                 );
 

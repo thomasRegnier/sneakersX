@@ -182,6 +182,8 @@
 
             </div>
         </form>
+        <Loading v-if="isLoading" />
+
     </div>
 </template>
 
@@ -196,13 +198,15 @@
     import { mapGetters, mapActions } from "vuex";
 
     import SecondaryImg from '../components/SecondaryImg'
+    import Loading from '../components/Loading.vue'
 
 
 
     export default {
         components: {
             editor: Editor,
-            SecondaryImg
+            SecondaryImg,
+            Loading
         },
         data(){
             return{
@@ -225,6 +229,8 @@
                 imageChange : false,
                 imageChangeMulti : false,
                 previewUrlMulti: '',
+                isLoading: false
+
 
 
 
@@ -323,6 +329,7 @@
             },
 
             saveNews(){
+                this.isLoading = true
                 this.product.active = this.product.active === false ? 0 : 1
 
                 const data = new FormData();
@@ -337,6 +344,7 @@
 
                 axios.post('/api/admin/product', data).then(response => {
                     console.log(response)
+                    this.isLoading = false
                     this.$router.push('/AdminProducts')
 
                 }).catch( (error) => {
@@ -350,6 +358,7 @@
             },
 
             updateNews(){
+                this.isLoading = true
                 this.product.active = this.product.active === false ? 0 : 1
 
                 const data = new FormData();
@@ -363,6 +372,7 @@
 
                 axios.post(`/api/admin/product/${this.$route.params.id}`, data).then(response => {
                     console.log(response)
+                    this.isLoading = false
                     this.$router.push('/AdminProducts')
 
                 }).catch( (error) => {

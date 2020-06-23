@@ -188,6 +188,7 @@
 
             </div>
         </form>
+        <Loading v-if="isLoading" />
     </div>
 </template>
 
@@ -198,11 +199,13 @@
 
     import axios from 'axios'
     import moment from 'moment'
+    import Loading from '../components/Loading.vue'
 
 
     export default {
         components: {
-            editor: Editor
+            editor: Editor,
+            Loading
         },
         data(){
             return{
@@ -221,6 +224,7 @@
                 previewUrl: '',
                 forUpdate: false,
                 imageChange : false,
+                isLoading: false
 
 
             }
@@ -293,6 +297,7 @@
             },
 
             saveNews(){
+                this.isLoading = true
 
                 const data = new FormData();
                 data.append('image', this.news.image);
@@ -304,6 +309,7 @@
                 data.append('isActive', this.news.active)
 
                 axios.post('/api/admin/news', data).then(response => {
+                    this.isLoading = false
                     this.$router.push('/AdminActu')
 
                 }).catch( (error) => {
@@ -319,7 +325,7 @@
             },
 
             updateNews(){
-
+                this.isLoading = true
                 this.news.active = this.news.active === false ? 0 : 1
                 const data = new FormData();
                 data.append('description', this.news.description);
@@ -331,6 +337,8 @@
                 data.append('isActive', this.news.active)
 
                 axios.post(`/api/admin/news/${this.$route.params.id}`, data).then(response => {
+                    this.isLoading = false
+
                     this.$router.push('/AdminActu')
 
                 }).catch( (error) => {

@@ -151,6 +151,8 @@ class NewsController extends Controller
         }
 
 
+        $cloundary_upload = false;
+
         if($request->image !== $news->image){
 
             Cloudder::upload($request->file('image'));
@@ -165,7 +167,6 @@ class NewsController extends Controller
 
        // $request->image = $image;
 
-        $cloundary_upload = false;
 
         $news->update([
                 'title' => $request->title,

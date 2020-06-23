@@ -125,6 +125,7 @@
 
             </div>
         </form>
+        <Loading v-if="isLoading" />
     </div>
 </template>
 
@@ -135,11 +136,13 @@
 
     import axios from 'axios'
     import moment from 'moment'
+    import Loading from '../components/Loading.vue'
 
 
     export default {
         components: {
-            editor: Editor
+            editor: Editor,
+            Loading
         },
         data(){
             return{
@@ -156,7 +159,9 @@
                 previewUrlBann: '',
                 forUpdate: false,
                 imageChange : false,
-                bannerChange: false
+                bannerChange: false,
+                isLoading: false
+
 
 
 
@@ -226,6 +231,7 @@
             },
 
             saveNews(){
+                this.isLoading = true
 
                 const data = new FormData();
                 data.append('name', this.brand.name);
@@ -235,6 +241,8 @@
 
                 axios.post('/api/admin/brands', data).then(response => {
                     console.log(response)
+                    this.isLoading = false
+
                     this.$router.push('/AdminBrand')
 
                 }).catch( (error) => {
@@ -248,6 +256,7 @@
             },
 
             updateNews(){
+                this.isLoading = true
                 const data = new FormData();
                 data.append('name', this.brand.name);
                 data.append('description', this.brand.description);
@@ -256,6 +265,7 @@
 
                 axios.post(`/api/admin/brand/${this.$route.params.id}`, data).then(response => {
                     console.log(response)
+                    this.isLoading = false
                     this.$router.push('/AdminBrand')
 
                 }).catch( (error) => {
